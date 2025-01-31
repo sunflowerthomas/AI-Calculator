@@ -1,0 +1,43 @@
+#calc {
+    background-color: #6610f2;
+    padding: 20px;
+    margin: auto;
+    border-radius: 25px;
+    width: 515px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+/*
+    Let's get rid of this ugly white background
+*/
+
+body {
+    background-color: #161616;
+    color: rgb(224, 224, 224);
+}
+
+.OutputNum {
+    color: white;
+    text-align: center;
+}
+
+h3:hover {
+    cursor: pointer;
+    transition-delay: 0.11s;
+    color: rgb(207, 101, 15);
+    font-size:x-large;
+}
+
+h1 {
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+}
+
+.Select {
+    cursor: pointer;
+}

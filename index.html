@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Calculator</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="calc.js"></script>
+    </head>
+    <body>
+        <h1>Sunflowerthomas's calculator</h1>
+        <h3>Enter two numbers below</h3>
+        <div id="calc"><form>
+            <input type="number" id="1num" name="1num" value="" placeholder="Insert value here"><br>
+            <input type="radio" id="add" name="calc-type" value="add">
+            <label for="add">+</label><br>
+            <input type="radio" id="subtract" name="calc-type" value="subtract">
+            <label for="subtract">-</label><br>
+            <input type="radio" id="multiply" name="calc-type" value="multiply">
+            <label for="multiply">×</label><br>
+            <input type="radio" id="divide" name="calc-type" value="divide">
+            <label for="divide">÷</label><br>
+            <input type="number" id="2num" name="2num" value="" placeholder="Insert value here"><br>
+            <input class="Select" type="button" value="Calculate" onclick="calculate()">
+        </form></div>
+        <h3 class="OutputNum" id="output">Please enter some values</h3>
+    </body>
+</html>
