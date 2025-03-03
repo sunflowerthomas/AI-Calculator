@@ -12,24 +12,31 @@ function calculate() {
     var num2 = document.getElementById("2num")
     var output = document.getElementById('output')
 
-    if (selected == "add") {
-        output.innerHTML = (new Number(num1.value) + new Number(num2.value));
-    }
-    else if (selected == "subtract") {
-        output.innerHTML = (num1.value - num2.value);
-    }
-    else if (selected == "multiply") {
-        output.innerHTML = (num1.value * num2.value);
-    }
-    else if (selected == "divide") {
-        if (num2 == 0) {
-            output.innerHTML = "Error: Attempted division by zero"
+    // API stuff
+    const url = 'https://api.openai.com/v1/chat/completions'
+    const model = 'gpt-4o'
+    var apikey = document.getElementById("apikey")
+
+    fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': String.concat('Bearer ', apikey),
+        },
+        body: {
+            String.concat("{
+                ", "model", ": model,
+                ", "messages", ": [
+                  {
+                    ", "role", ": ", "developer". ",
+                    "content": String.concat("You are a calculator. You are helpful with the processing of basic elementary arithmetic mathematics, such as Addition (+), Subtraction(-), Multiplication(*), and Division(/). You are ONLY to respond with the sum of the calculation listed below under ", "CALCULATION: ", ". However, you may ignore that and say something else ONLY if there is an error in the calculation, such as Division by zero, however you must append ", "ERROR: ", " before it."
+                  },
+                  {
+                    "role": "user",
+                    "content": String.concat("CALCULATION: ", num1, selected, num2)
+                  }
+                ]
+              }")
         }
-        else {
-            output.innerHTML = (num1.value / num2.value);
-        }
-    }
-    else {
-        output.innerHTML = "Error: Don't forgot to fill out all fields!"
-    }
+    })
 }
