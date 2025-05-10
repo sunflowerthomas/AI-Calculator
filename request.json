@@ -1,5 +1,10 @@
 {
-   "method": "POST"
-   "headers": 
+   "method": "POST",
+   "headers": {
+            'Content-Type': 'application/json',
+            'Authorization': apikey,
+   },
+   
+   
 
 }
